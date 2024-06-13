@@ -15,22 +15,33 @@ with open(path, 'r', encoding='utf-8') as file:
     # print(current_line_read_file)
     # sorted(i.findall() for i in )
     current_line_read_file_and_space = [rec + ' ' for rec in current_line_read_file]
-    print(current_line_read_file_and_space)
+    # print(current_line_read_file_and_space)
 
 print('Document')
-what_found = 'Document'
-what_found_2 = ' mots'
-print('mots')
+found_Document = 'Document'
+found_mots = ' mots'
+found_Reserved = 'Reserved'
+found_reserved_lower = 'All Rights Reserved'
 
 str_new_line = rf'\n'
 str_space = ' '
 
-#numbers_and_str_2 = [(current_line_read_file_and_space.index(h), h) for h in current_line_read_file_and_space if (what_found_2 in h and len(h)<10)]
-#print(numbers_and_str_2)
-#print(f"len(numbers_and_str_2): {len(numbers_and_str_2)}")
+print('mots')
+numbers_and_str_mots = [(current_line_read_file_and_space.index(mot), mot) for mot in current_line_read_file_and_space
+                        if (found_mots in mot and len(mot) <= 10)]
+print(numbers_and_str_mots)
+print(f"len(numbers_and_str_mots): {len(numbers_and_str_mots)}")
 
-numbers_and_str = [(current_line_read_file_and_space.index(i), i) for i in current_line_read_file_and_space if what_found in i]
-# print(numbers_and_str)
+# a_list.index("a",a_list.index('a')+1)
+print('reverse')
+numbers_and_str_reverse = [(current_line_read_file_and_space.index(rev), rev) for rev in current_line_read_file_and_space if (found_reserved_lower in rev)]
+print(numbers_and_str_reverse)
+print(f"len(numbers_and_str_reverse): {len(numbers_and_str_reverse)}")
+
+print('Document')
+numbers_and_str = [(current_line_read_file_and_space.index(doc), doc) for doc in current_line_read_file_and_space if
+                   found_Document in doc]
+print(numbers_and_str)
 print(f" count numbers_of_str= {len(numbers_and_str)}")
 numbers_and_str.insert(0, (0, ''))
 # print(numbers_and_str)
@@ -46,20 +57,22 @@ while len_list < 101:
     # print(f"turple_1: {turple_1}")
     # print(f"turple_2: {turple_2}")
     print(f"turple_1[0]: {turple_1[0]}")
-    print(f"type(turple_1[0]): {type(turple_1[0])}")
+    # print(f"type(turple_1[0]): {type(turple_1[0])}")
     # print(f"turple_2[0]: {turple_2[0]}")
     # print(f"turple_1[1]: {turple_1[1]}")
-    print(f"turple_2[1]: {turple_2[1] + '\n'}")
-    print(f"type(turple_2[1]): {type(turple_2[1])}")
-    print()
+    print(f"turple_2[1]: {turple_2[1]}")
+    # print(f"type(turple_2[1]): {type(turple_2[1])}")
     triple_3 = (turple_1[0], turple_2[1])
     changed_numbers_and_str.append(triple_3)
     print(f"triple_3: {triple_3}")
-
+    print(f"current_element: {len_list}")
+    print()
     # numbers_and_str[len_list-1] =
     current_line_read_file_and_space[turple_1[0]] = '**** *id_' + turple_2[1] + '*reg_' + '\n'
     len_list += 1
 
+if len_list == 101:
+    current_line_read_file_and_space.pop(numbers_and_str[len_list - 1][0])
 # print(changed_numbers_and_str)
 print('--------------------------')
 print(type(current_line_read_file_and_space))
