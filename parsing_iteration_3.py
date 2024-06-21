@@ -1,6 +1,8 @@
 import re
-path_3 = rf"C:\Users\AVKochubey\Desktop\parsing\iter_2\Factiva-20240612-PACA.txt"
-path_4 = rf"C:\Users\AVKochubey\Desktop\parsing\iter_3\Factiva-20240612-PACA.txt"
+
+file_name = 'Factiva20240612ARA'
+path_3 = rf"C:\Users\AVKochubey\Desktop\parsing\iter_2\{file_name}.txt"
+path_4 = rf"C:\Users\AVKochubey\Desktop\parsing\iter_3\{file_name}.txt"
 with open(path_3, 'r', encoding='utf-8') as file:
     current_line_read_file = file.read()
     print(type(current_line_read_file))

@@ -1,8 +1,9 @@
 import io
 import re
 
-path = rf"C:\Users\AVKochubey\Desktop\parsing\Factiva-20240612-PACA.txt"
-path_2 = rf"C:\Users\AVKochubey\Desktop\parsing\iter_1\Factiva-20240612-PACA.txt"
+file_name = 'Factiva20240612PDL'
+path = rf"C:\Users\AVKochubey\Desktop\parsing\{file_name}.txt"
+path_2 = rf"C:\Users\AVKochubey\Desktop\parsing\iter_1\{file_name}.txt"
 with open(path, 'r', encoding='utf-8') as file:
     # parsing_file = file.open(file.decode('utf-8')))
     current_line_read_file = file.read().splitlines()
